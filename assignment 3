@@ -1,0 +1,34 @@
+1.y=1
+2.x=111
+3.x=1
+4.x=0101
+5.b=1010001
+6.B1
+7.B2
+8.y=1'b1.its 2X1 mux based design.reg [3:0]a= 4'b110x; wire y =(a==4';b1100)?1'b1:1'b0; this condition is true.so the answer is 1'b1
+9.1'b0
+10.b=010x
+11.
+
+module ALU_4bit (
+    input [3:0] A, 
+    input [3:0] B, 
+    input [2:0] sel, 
+    output reg [3:0] result
+);
+
+always @(*) begin
+    case(sel)
+        3'b000: result= A + B; 
+        3'b001: result= A - B; 
+        3'b010: result = (B != 0) ? A / B : 4'bxxxx; 
+        3'b011: result = A && B; 
+        3'b100: result = A & B; 
+        3'b101: result = A | B; 
+        3'b110: result = ~(A & B); 
+        3'b111: result = ~(A ^ B); 
+        default: result = 4'b0000; 
+    endcase
+end
+
+endmodule
