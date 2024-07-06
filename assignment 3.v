@@ -1,14 +1,128 @@
-1.y=1
-2.x=111
-3.x=1
-4.x=0101
-5.b=0010101
-6.B1
-7.B2
-8.y=1'b1.its 2X1 mux based design.reg [3:0]a= 4'b110x; wire y =(a==4';b1100)?1'b1:1'b0; this condition is true.so the answer is 1'b1
-9.1'b0
-10.b=010x
-11.
+1.What is the value of y in the below snippet?
+
+reg [2:0] a, b;
+reg y;
+initial
+begin
+a= 3'd5;
+b= 3'b111
+y = a&&b;
+end
+answer:y=1
+
+2.What is the value of x in the below snippet?
+
+reg [2:0] a, b;
+reg [2:0]x;
+initial
+begin
+a=3'd5;
+b=3'b111;
+x= a | b;
+end
+answer:x=111
+
+3.What is the value of x in the below snippet?
+
+reg [2:0]a;
+reg [2:0]x;
+initial
+begin
+x=^a;
+a=3'd4;
+end
+answer:x=1
+
+4.Evaluate the value of x in the below snippet.
+
+reg [3:0]a;
+
+reg [1:0]x;
+initial
+begin
+a = 4'd10;
+    X= (a>>1);
+end
+answer:x=0101
+
+5.Find the value of b in the below snippet.
+
+reg [3:0]a;
+reg [6:0]b;
+initial
+begin
+a=4'd10;
+b={a,1};
+end
+answer:b=0010101
+
+6.Which block executes in the below snippet and justify the
+reason:
+reg [3:0]a= 4'b110x;
+initial
+begin
+    if (a== 4'b1100)
+begin: B1
+end
+else
+begin: B2 end
+end
+    answer:B2
+
+
+7.Which block executes in the below snippet and justify the
+reason.
+reg [3:0]a= 4'b110x;
+initial
+begin
+    if ( a !== 4'b1100)
+begin: B1
+end
+else
+begin: B2 end
+end
+
+answer:B1
+
+
+8.What is the value of y in the below expression and justify the
+reason.
+
+reg [3:0]a= 4'b110x;
+wire y = (a== 4'b1100)?1'b1:1'b0;
+answer:
+y=1'b0.
+
+9.What is the value of y in the below expression and justify the
+reason.
+
+reg [3:0]a= 4'b010x;
+wire y = (a== 4'b1100)?1'b1:1'b0;
+answer:y=1'b0
+
+10.What is the value of b in the below expression and justify the
+reason.
+
+reg [3:0]a= 4'b0100;
+reg [3:0]b;
+initial
+begin
+b = a+1'bx;
+end
+answer:b=4'bxxxx;
+
+11.Design a 4 bit ALU circuit to perform arithmetic and logic
+operations.
+
+Based on sel signal output will be assigned.
+If sel =3'b000 => addition
+3'b001 => subtraction
+3'b010 => division
+3'b011 => logical and
+3'b100 => bitwise and
+3'b101 => bitwise or
+3'b110 => bitwise nand
+3'b111 => bitwise xnor
 
 module ALU_4bit (
     input [3:0] A, 
