@@ -151,4 +151,25 @@ endcase
 endmodule
 
 
-3.
+3.Write RTL for a synchronous logic control unit for a Vending machine.
+The machine can take only two types of coins of denomination 1 and 2
+in any order. It delivers only one product that is priced at Rs. 3. On
+receiving Rs. 3 the product is delivered by asserting an output X=1
+which otherwise remains 0. If it gets Rs. 4 then the product is
+delivered by asserting X and also a coin return mechanism is
+activated by output Y = 1 to return a Re. 1 coin . There are two
+sensors to sense the denomination of the coins that give binary output
+as shown in the following table. The clock speed is much higher than
+human response time, i.e. no two coins can be deposited in the same
+clock cycle.
+
+I J Coin
+0 0 No coin dropped
+0 1 One Rupee
+1 0 Two Rupees
+1 1 No coin dropped
+
+  answer:
+
+  mo
+  
