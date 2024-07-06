@@ -27,7 +27,7 @@ endmodule
 answer:b=000000000000000000000000000001110
 
 
-4.Find the value of the variable t at 1ns &amp; 20ns respectively from the
+4.Find the value of the variable t at 1ns & 20ns respectively from the
 below snippet.
 time = t;
 initial begin
