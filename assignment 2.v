@@ -89,8 +89,8 @@ answer: in module top no need to put "initial"
 reg[13*8:1]s;
 initial
 begin
-s = &quot;hello world&quot;;
-$display(&quot;Value = %s&quot;,s[104:65]);
+s = "hello world";
+    $display("Value = %s",s[104:65]);
 
 end
 answer:"hello" word will display
